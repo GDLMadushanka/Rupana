@@ -221,6 +221,12 @@
     <Compile Include="Models\DAO\feedBack.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\getRecommendationFromRules_Result.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DAO\getRecommendations_Result.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DAO\intention.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -228,6 +234,9 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DAO\readResults_Result.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DAO\Recommendation_Result.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DAO\table.cs">
