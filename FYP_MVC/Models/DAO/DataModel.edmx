@@ -343,6 +343,9 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+
+        <Function Name="calculateScoreOfPermutumVersion2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
         <Function Name="calculateCosineScore_DimCount_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tableID" Type="int" Mode="In" />
           <Parameter Name="intention" Type="nvarchar" Mode="In" />
@@ -481,6 +484,7 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
           <Parameter Name="Curr_dim3_context" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="calculateScoreOfPermutum_DimCount_4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
           <Parameter Name="result" Type="float" Mode="InOut" />
           <Parameter Name="intention" Type="nvarchar" Mode="In" />
           <Parameter Name="dim1_IsContinuous" Type="int" Mode="In" />
@@ -509,6 +513,26 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
           <Parameter Name="Curr_dim4_Cardinality" Type="int" Mode="In" />
           <Parameter Name="Curr_dim4_context" Type="nvarchar" Mode="In" />
         </Function>
+
+        <Function Name="getRecommendationFromRules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tableID" Type="int" Mode="In" />
+          <Parameter Name="intention" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getRecommendations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tableID" Type="int" Mode="In" />
+          <Parameter Name="intention" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getRecommendations_More" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tableID" Type="int" Mode="In" />
+          <Parameter Name="intention" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getRecommendations_More_WithoutIntention" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tableID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getRecommendations_WithoutIntention" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tableID" Type="int" Mode="In" />
+        </Function>
+
         <Function Name="calculateScoreOfPermutum_DimCount_4_WithoutIntention" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="result" Type="float" Mode="InOut" />
           <Parameter Name="dim1_IsContinuous" Type="int" Mode="In" />
@@ -824,6 +848,7 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
         <Function Name="getRecommendations_WithoutIntention" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tableID" Type="int" Mode="In" />
         </Function>
+
         <EntityContainer Name="FYPModelStoreContainer">
           <EntitySet Name="chart" EntityType="Self.chart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="chartDimension" EntityType="Self.chartDimension" Schema="dbo" store:Type="Tables" />
@@ -831,7 +856,9 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
           <EntitySet Name="column" EntityType="Self.column" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dimensionContext" EntityType="Self.dimensionContext" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dimensionCount" EntityType="Self.dimensionCount" Schema="dbo" store:Type="Tables" />
+
           <EntitySet Name="headerContext" EntityType="Self.headerContext" Schema="dbo" store:Type="Tables" />
+
           <EntitySet Name="intention" EntityType="Self.intention" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="originalDataFile" EntityType="Self.originalDataFile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="table" EntityType="Self.table" Schema="dbo" store:Type="Tables" />
@@ -1593,6 +1620,9 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
             <Parameter Name="Curr_dim4_Cardinality" Mode="In" Type="Int32" />
             <Parameter Name="Curr_dim4_context" Mode="In" Type="String" />
           </FunctionImport>
+
+          <FunctionImport Name="getRecommendationFromRules" ReturnType="Collection(FYPModel.Recommendation_Result)">
+
           <FunctionImport Name="calculateScoreOfPermutum_DimCount_4_WithoutIntention">
             <Parameter Name="result" Mode="InOut" Type="Double" />
             <Parameter Name="dim1_IsContinuous" Mode="In" Type="Int32" />
@@ -1879,8 +1909,27 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
             <Parameter Name="tableID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getRecommendations_WithoutIntention">
+
             <Parameter Name="tableID" Mode="In" Type="Int32" />
+            <Parameter Name="intention" Mode="In" Type="String" />
           </FunctionImport>
+
+          <FunctionImport Name="readResults" ReturnType="Collection(FYPModel.readResults_Result)" />
+          <FunctionImport Name="getRecommendations" ReturnType="Collection(FYPModel.Recommendation_Result)">
+            <Parameter Name="tableID" Mode="In" Type="Int32" />
+            <Parameter Name="intention" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getRecommendations_More" ReturnType="Collection(FYPModel.Recommendation_Result)">
+            <Parameter Name="tableID" Mode="In" Type="Int32" />
+            <Parameter Name="intention" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getRecommendations_More_WithoutIntention" ReturnType="Collection(FYPModel.Recommendation_Result)">
+          <Parameter Name="tableID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getRecommendations_WithoutIntention" ReturnType="Collection(FYPModel.Recommendation_Result)">
+          <Parameter Name="tableID" Mode="In" Type="Int32" />
+          </FunctionImport>
+
         </EntityContainer>
         <ComplexType Name="readResults_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -1898,6 +1947,20 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
           <Property Type="String" Name="recommendation" Nullable="true" MaxLength="30" />
           <Property Type="Double" Name="score" Nullable="true" />
         </ComplexType>
+
+        <ComplexType Name="getRecommendationFromRules_Result">
+          </ComplexType>
+        <ComplexType Name="getRecommendations_Result">
+          <Property Type="String" Name="chartName" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="tableDimIndex" Nullable="true" />
+          <Property Type="Int32" Name="chartDimIndex" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Recommendation_Result">
+          <Property Type="String" Name="chartName" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="tableDimIndex" Nullable="true" />
+          <Property Type="Int32" Name="chartDimIndex" Nullable="true" />
+        </ComplexType>
+
         <EntityType Name="headerContext">
           <Key>
             <PropertyRef Name="ID" />
@@ -1906,6 +1969,7 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
           <Property Name="ContextType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Word" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
+
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2108,6 +2172,53 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="calculateScoreOfPermutumVersion2" FunctionName="FYPModel.Store.calculateScoreOfPermutumVersion2" />
+
+          <FunctionImportMapping FunctionImportName="getRecommendationFromRules" FunctionName="FYPModel.Store.getRecommendationFromRules" >
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="FYPModel.Recommendation_Result">
+                <ScalarProperty Name="chartName" ColumnName="chartName" />
+                <ScalarProperty Name="tableDimIndex" ColumnName="tableDimIndex" />
+                <ScalarProperty Name="chartDimIndex" ColumnName="chartDimIndex" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getRecommendations" FunctionName="FYPModel.Store.getRecommendations" >
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="FYPModel.Recommendation_Result">
+                <ScalarProperty Name="chartName" ColumnName="chartName" />
+                <ScalarProperty Name="tableDimIndex" ColumnName="tableDimIndex" />
+                <ScalarProperty Name="chartDimIndex" ColumnName="chartDimIndex" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getRecommendations_More" FunctionName="FYPModel.Store.getRecommendations_More" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FYPModel.Recommendation_Result">
+                <ScalarProperty Name="chartName" ColumnName="chartName" />
+                <ScalarProperty Name="tableDimIndex" ColumnName="tableDimIndex" />
+                <ScalarProperty Name="chartDimIndex" ColumnName="chartDimIndex" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getRecommendations_More_WithoutIntention" FunctionName="FYPModel.Store.getRecommendations_More_WithoutIntention" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FYPModel.Recommendation_Result">
+                <ScalarProperty Name="chartName" ColumnName="chartName" />
+                <ScalarProperty Name="tableDimIndex" ColumnName="tableDimIndex" />
+                <ScalarProperty Name="chartDimIndex" ColumnName="chartDimIndex" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getRecommendations_WithoutIntention" FunctionName="FYPModel.Store.getRecommendations_WithoutIntention" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FYPModel.Recommendation_Result">
+                <ScalarProperty Name="chartName" ColumnName="chartName" />
+                <ScalarProperty Name="tableDimIndex" ColumnName="tableDimIndex" />
+                <ScalarProperty Name="chartDimIndex" ColumnName="chartDimIndex" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+
           <FunctionImportMapping FunctionImportName="getRecommendationFromRules" FunctionName="FYPModel.Store.getRecommendationFromRules" />
           <EntitySetMapping Name="headerContexts">
             <EntityTypeMapping TypeName="FYPModel.headerContext">
@@ -2149,6 +2260,7 @@ warning 6002: The table/view 'FYP.dbo.chartRuleBase_View' does not have a primar
           <FunctionImportMapping FunctionImportName="getRecommendations_More" FunctionName="FYPModel.Store.getRecommendations_More" />
           <FunctionImportMapping FunctionImportName="getRecommendations_More_WithoutIntention" FunctionName="FYPModel.Store.getRecommendations_More_WithoutIntention" />
           <FunctionImportMapping FunctionImportName="getRecommendations_WithoutIntention" FunctionName="FYPModel.Store.getRecommendations_WithoutIntention" />
+
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
