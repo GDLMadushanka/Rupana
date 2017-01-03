@@ -226,7 +226,7 @@ namespace FYP_MVC.Models.DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("calculateScoreOfPermutumVersion2", result, intentionParameter, dim1_IsContinuousParameter, dim1_CardinalityParameter, dim1_contextParameter, dim2_IsContinuousParameter, dim2_CardinalityParameter, dim2_contextParameter, dim3_IsContinuousParameter, dim3_CardinalityParameter, dim3_contextParameter, curr_intentionParameter, curr_dim1_IsContinuousParameter, curr_dim1_CardinalityParameter, curr_dim1_contextParameter, curr_dim2_IsContinuousParameter, curr_dim2_CardinalityParameter, curr_dim2_contextParameter, curr_dim3_IsContinuousParameter, curr_dim3_CardinalityParameter, curr_dim3_contextParameter);
         }
     
-        public virtual ObjectResult<getRecommendationFromRules_Result> getRecommendationFromRules(Nullable<int> tableID, string intention)
+        public virtual ObjectResult<Recommendation_Result> getRecommendationFromRules(Nullable<int> tableID, string intention)
         {
             var tableIDParameter = tableID.HasValue ?
                 new ObjectParameter("tableID", tableID) :
@@ -236,7 +236,7 @@ namespace FYP_MVC.Models.DAO
                 new ObjectParameter("intention", intention) :
                 new ObjectParameter("intention", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getRecommendationFromRules_Result>("getRecommendationFromRules", tableIDParameter, intentionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Recommendation_Result>("getRecommendationFromRules", tableIDParameter, intentionParameter);
         }
     
         public virtual ObjectResult<readResults_Result> readResults()
@@ -287,5 +287,7 @@ namespace FYP_MVC.Models.DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Recommendation_Result>("getRecommendations_WithoutIntention", tableIDParameter);
         }
+
+        public System.Data.Entity.DbSet<FYP_MVC.Models.DAO.Recommendation_Result> Recommendation_Result { get; set; }
     }
 }

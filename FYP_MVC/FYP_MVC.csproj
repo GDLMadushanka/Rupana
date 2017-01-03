@@ -173,8 +173,11 @@
     <Compile Include="Controllers\chartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReccomendationController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Core\ContextRecognizer\ContextExtractor.cs" />
+    <Compile Include="Core\Recommendation\Recommendation.cs" />
+    <Compile Include="Core\RuleBaseComponent\RuleBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,6 +242,7 @@
     <Compile Include="Models\DAO\Recommendation_Result.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\Recommendation_Results.cs" />
     <Compile Include="Models\DAO\table.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -368,13 +372,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Task\UploadCSV.cshtml" />
     <Content Include="Views\Task\showCSV.cshtml" />
+    <Content Include="Views\Reccomendation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Admin\" />
     <Folder Include="Controllers\User\" />
-    <Folder Include="Core\MLComponent\" />
-    <Folder Include="Core\RuleBaseComponent\" />
     <Folder Include="Models\CoreObjects\" />
   </ItemGroup>
   <ItemGroup>
