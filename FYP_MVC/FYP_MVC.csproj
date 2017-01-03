@@ -49,6 +49,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.UnitTestFramework.Extensions.1.0.0.3\lib\net40\Microsoft.UnitTestFramework.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -224,10 +229,14 @@
     <Compile Include="Models\DAO\feedBack.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+
     <Compile Include="Models\DAO\getRecommendationFromRules_Result.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DAO\getRecommendations_Result.cs">
+
+    <Compile Include="Models\DAO\headerContext.cs">
+
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DAO\intention.cs">
@@ -262,6 +271,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Unit Testing\ContextExtractorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -372,7 +382,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Task\UploadCSV.cshtml" />
     <Content Include="Views\Task\showCSV.cshtml" />
+
     <Content Include="Views\Reccomendation\Index.cshtml" />
+
+    <Content Include="Views\Task\showContextInfo.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -390,6 +404,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

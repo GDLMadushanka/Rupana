@@ -42,6 +42,7 @@ namespace FYP_MVC.Models.DAO
         public virtual DbSet<feedBack> feedBacks { get; set; }
         public virtual DbSet<userFeedBack> userFeedBacks { get; set; }
         public virtual DbSet<chartRuleBase_View> chartRuleBase_View { get; set; }
+        public virtual DbSet<headerContext> headerContexts { get; set; }
     
         public virtual int calculateCosineScore(Nullable<int> dim1_numOfDim, string intention, Nullable<int> dim1_IsContinuous, Nullable<int> dim1_Cardinality, string dim1_context, Nullable<int> dim2_IsContinuous, Nullable<int> dim2_Cardinality, string dim2_context, Nullable<int> dim3_IsContinuous, Nullable<int> dim3_Cardinality, string dim3_context)
         {
@@ -226,7 +227,9 @@ namespace FYP_MVC.Models.DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("calculateScoreOfPermutumVersion2", result, intentionParameter, dim1_IsContinuousParameter, dim1_CardinalityParameter, dim1_contextParameter, dim2_IsContinuousParameter, dim2_CardinalityParameter, dim2_contextParameter, dim3_IsContinuousParameter, dim3_CardinalityParameter, dim3_contextParameter, curr_intentionParameter, curr_dim1_IsContinuousParameter, curr_dim1_CardinalityParameter, curr_dim1_contextParameter, curr_dim2_IsContinuousParameter, curr_dim2_CardinalityParameter, curr_dim2_contextParameter, curr_dim3_IsContinuousParameter, curr_dim3_CardinalityParameter, curr_dim3_contextParameter);
         }
     
+
         public virtual ObjectResult<Recommendation_Result> getRecommendationFromRules(Nullable<int> tableID, string intention)
+
         {
             var tableIDParameter = tableID.HasValue ?
                 new ObjectParameter("tableID", tableID) :
@@ -236,7 +239,9 @@ namespace FYP_MVC.Models.DAO
                 new ObjectParameter("intention", intention) :
                 new ObjectParameter("intention", typeof(string));
     
+
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Recommendation_Result>("getRecommendationFromRules", tableIDParameter, intentionParameter);
+
         }
     
         public virtual ObjectResult<readResults_Result> readResults()
@@ -244,7 +249,9 @@ namespace FYP_MVC.Models.DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<readResults_Result>("readResults");
         }
     
+
         public virtual ObjectResult<Recommendation_Result> getRecommendations(Nullable<int> tableID, string intention)
+
         {
             var tableIDParameter = tableID.HasValue ?
                 new ObjectParameter("tableID", tableID) :
@@ -254,10 +261,13 @@ namespace FYP_MVC.Models.DAO
                 new ObjectParameter("intention", intention) :
                 new ObjectParameter("intention", typeof(string));
     
+
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Recommendation_Result>("getRecommendations", tableIDParameter, intentionParameter);
         }
     
-        public virtual ObjectResult<Recommendation_Result> getRecommendations_More(Nullable<int> tableID, string intention)
+      
+        public  virtual ObjectResult<Recommendation_Result> getRecommendations_More(Nullable<int> tableID, string intention)
+
         {
             var tableIDParameter = tableID.HasValue ?
                 new ObjectParameter("tableID", tableID) :
@@ -266,7 +276,7 @@ namespace FYP_MVC.Models.DAO
             var intentionParameter = intention != null ?
                 new ObjectParameter("intention", intention) :
                 new ObjectParameter("intention", typeof(string));
-    
+
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Recommendation_Result>("getRecommendations_More", tableIDParameter, intentionParameter);
         }
     
@@ -275,9 +285,11 @@ namespace FYP_MVC.Models.DAO
             var tableIDParameter = tableID.HasValue ?
                 new ObjectParameter("tableID", tableID) :
                 new ObjectParameter("tableID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Recommendation_Result>("getRecommendations_More_WithoutIntention", tableIDParameter);
+                
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("getRecommendations_More_WithoutIntention", tableIDParameter);
         }
+    
+        
     
         public virtual ObjectResult<Recommendation_Result> getRecommendations_WithoutIntention(Nullable<int> tableID)
         {
@@ -285,9 +297,11 @@ namespace FYP_MVC.Models.DAO
                 new ObjectParameter("tableID", tableID) :
                 new ObjectParameter("tableID", typeof(int));
     
+
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Recommendation_Result>("getRecommendations_WithoutIntention", tableIDParameter);
         }
 
         public System.Data.Entity.DbSet<FYP_MVC.Models.DAO.Recommendation_Result> Recommendation_Result { get; set; }
+
     }
 }

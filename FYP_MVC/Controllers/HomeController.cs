@@ -11,8 +11,7 @@ namespace FYP_MVC.Controllers
     {
         public ActionResult Index()
         {
-       //     ContextExtractor ce = new ContextExtractor();
-       //     ce.checkForDate();
+
             return View();
         }
 
