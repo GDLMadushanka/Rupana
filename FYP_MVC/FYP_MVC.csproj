@@ -58,6 +58,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NaturalDate">
+      <HintPath>Content\NaturalDate\NaturalDate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -287,7 +290,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\about.css" />
     <Content Include="Content\css\bivariateArea.css" />
     <Content Include="Content\css\bootstrap-table.css" />
     <Content Include="Content\css\bootstrap-theme.css" />
@@ -312,6 +314,9 @@
     <Content Include="Content\img\banner5.png" />
     <Content Include="Content\img\barchart.png" />
     <Content Include="Content\img\blog\1.jpg" />
+
+    <Content Include="Content\img\chartImg\1.png" />
+
     <Content Include="Content\img\blog\aba.jpg" />
     <Content Include="Content\img\blog\dilshan.jpg" />
     <Content Include="Content\img\blog\lahiru.jpg" />
@@ -343,10 +348,13 @@
     <Content Include="Content\img\chartImages\Stacked bar chart.png" />
     <Content Include="Content\img\chartImages\Time Line.png" />
     <Content Include="Content\img\chartImages\Tree Map.png" />
+
     <Content Include="Content\img\context1.png" />
+
     <Content Include="Content\img\find_user.png" />
     <Content Include="Content\img\Guide.png" />
     <Content Include="Content\img\img.png" />
+    <Content Include="Content\img\logo2.png" />
     <Content Include="Content\img\Pie.png" />
     <Content Include="Content\img\Preloader_1.gif" />
     <Content Include="Content\img\Preloader_2.gif" />
@@ -374,6 +382,7 @@
     <Content Include="Content\js\dataTables\dataTables.bootstrap.css" />
     <Content Include="Content\js\dataTables\dataTables.bootstrap.js" />
     <Content Include="Content\js\dataTables\jquery.dataTables.js" />
+    <Content Include="Content\js\date.js" />
     <Content Include="Content\js\easypiechart-data.js" />
     <Content Include="Content\js\easypiechart.js" />
     <Content Include="Content\js\html5shiv.min.js" />
@@ -391,6 +400,7 @@
     <Content Include="Content\js\respond.min.js" />
     <Content Include="Content\js\wow.min.js" />
     <Content Include="Content\Python\date.py" />
+    <Content Include="Content\Python\date2.py" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

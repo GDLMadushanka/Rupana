@@ -3,10 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lumino - Dashboard</title>
+
+    <title>Roopana</title>
+
+
     <!--about us-->
     <link href="~/Content/css/about.css" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 
     <!--carousel-->
     <script src="~/Content/js/carousel.js"></script>
@@ -30,18 +34,27 @@
 
     <script src="~/Content/js/jquery.csv.js"></script>
     <script src="~/Content/js/bootstrap.min.js"></script>
-    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="~/Content/js/bootstrap-dropdown.js"></script>
-    <link href="~/Content/css/datepicker3.css" rel="stylesheet" />
+    <script src="~/Content/js/date.js"></script>
+  
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/styles.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet">
+
+   
+
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
     <script src="~/Content/js/blog.js"></script>
+ 
     <!--Icons-->
     <link href="~/Content/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="~/Content/js/lumino.glyphs.js"></script>
+
+  
 
     <script>
         (function (h, o, t, j, a, r) {
@@ -55,7 +68,8 @@
     </script>
 
 
-    
+    <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js'></script>   
+
 </head>
 
 
@@ -74,9 +88,12 @@
                     </button>
 
 
-                    <img src="~/Content/img/name.png" width="200" height="35" style="margin-top: 7px" />
+                    <img src="~/Content/img/logo1.png" width="40" height="40" style="margin-top: 7px" />
+                  
+                   
+                  
 
-                    <ul class="user-menu">
+                    <ul class="user-menu" >
                         <li class="dropdown pull-right">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> @Session["userName"] <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -98,7 +115,7 @@
                 </div>
             </form>
             <ul class="nav menu">
-                <li class="active"><a href="@Url.Action("Home", "Task")"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+                <li class="active"><a href="@Url.Action("Home", "Task")"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Home</a></li>
                 <li><a href="@Url.Action("UploadCSV", "Task")"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> New Task</a></li>
                 <li><a href="@Url.Action("Guide", "Blog")"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Guide </a></li>
                 <li><a href="@Url.Action("ChartDiscriptionPage", "Blog")"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
@@ -107,7 +124,7 @@
                 <li><a href="@Url.Action("DevTeam", "Blog")"><svg class="glyph stroked round coffee mug"><use xlink:href="#stroked-round-coffee-mug" /></svg> Dev Team</a></li>
              
                 <li role="presentation" class="divider"></li>
-                <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>
+      
             </ul>
         </div><!--/.sidebar-->
 
@@ -115,7 +132,7 @@
             <div class="row">
                 <ol class="breadcrumb">
                     <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-                    <li class="active">Icons</li>
+                    <li class="active">@ViewBag.path</li>
                 </ol>
             </div><!--/.row-->
 
@@ -135,6 +152,7 @@
 
     <script>
 
+      
 
         $(window).load(function () {
             setTimeout(function () {
