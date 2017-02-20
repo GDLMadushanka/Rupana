@@ -217,8 +217,8 @@ namespace FYP_MVC.Core.ContextRecognizer
             ProcessStartInfo pythonInfo = new ProcessStartInfo();
             //pythonInfo.FileName = @"C:\Python27\python.exe";
 
-     
-            pythonInfo.FileName = @"C:\Python27\python.exe";
+
+            pythonInfo.FileName = @"C:\Users\kanchana\AppData\Local\Programs\Python\Python36-32\python.exe";
 
             //pythonInfo.FileName = @"/usr/bin/python";
             int temp = col.Data.Count;
