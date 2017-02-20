@@ -53,6 +53,8 @@ body {
   min-height: 425px; 
   height: 100%;
   width:100%;
+  margin-top:16px;
+
 }
 
 .carousel-inner .item .container {
@@ -179,25 +181,25 @@ body {
 /*       Slides backgrounds     */
 /********************************/
 #first-slider .slide1 {
-    background-image: url('../img/welcome1.png');
+    background-image: url('../img/carousel/carousel1.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 #first-slider .slide2 {
-    background-image: url('../img/welcome2.png');
+    background-image: url('../img/carousel/carousel2.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 #first-slider .slide3 {
-    background-image: url('../img/welcome3.png');
+    background-image: url('../img/carousel/carousel4.png');
       background-size: cover;
     background-repeat: no-repeat;
 }
-#first-slider .slide4 {
-  background-image: url('../img/welcome2.png');
+/*#first-slider .slide4 {
+    background-image: url('../img/carousel/carousel3.png');
       background-size: cover;
     background-repeat: no-repeat;
-}
+}*/
 
 
 

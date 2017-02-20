@@ -7,7 +7,7 @@ Version 1.0
 /*Global Styles*/
 
 body {
-	background: #f1f4f7;
+	background: #FFFFFF;
 	padding-top: 50px;
 	color: #5f6468;
 }
@@ -17,7 +17,7 @@ p {
 }
 
 a, a:hover, a:focus {
-	color: #30a5ff;
+	color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -551,7 +551,7 @@ a.bg-danger:hover {
 		padding: 0;
 		overflow-x: hidden;
 		overflow-y: auto; 
-		background-color: #fff;
+		background-color: #32454e;
 		box-shadow: 1px 0px 10px rgba(0, 0, 0, .05);
 	}
 	.navbar-header {
@@ -562,14 +562,14 @@ a.bg-danger:hover {
 .sidebar ul.nav a:hover, 
 .sidebar ul.nav li.parent ul li a:hover {
 	text-decoration: none;
-	background-color: #e9ecf2;
+	background-color: #0095a6;
 }
 
 .sidebar ul.nav .active a, .sidebar ul.nav li.parent a.active,
 .sidebar ul.nav .active > a:hover, .sidebar ul.nav li.parent a.active:hover,
 .sidebar ul.nav .active > a:focus, .sidebar ul.nav li.parent a.active:focus {
 	color: #fff;
-	background-color: #30a5ff;
+	background-color: #0095a6;
 }*/
 
 .sidebar ul.nav ul,
@@ -628,7 +628,7 @@ a.bg-danger:hover {
 .breadcrumb {
 	border-radius: 0;
 	padding: 10px 15px;
-	background: #e9ecf2;
+	background: #0095a6;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 	margin: 0 ;
 }
