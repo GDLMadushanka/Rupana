@@ -70,18 +70,32 @@
     <div class="col-lg-4">
         <ul class="listrap">
 
+            
 
-            @{int count = Model.chartTypes.Length;}
+            @{int count = Model.chartTypes.Length;
+                Boolean PC = false;
+                int id=0; }
             @for (int i = 0; i < count; i++)
             {
+                if (Model.chartTypes[i].Equals("Parallel cordinates")) { PC = true;id = i; continue; }
                 <li>
-                    <div class="listrap-toggle"  id="@i" onclick="set_feedback(this)">
+                    <div class="avatar listrap-toggle"  id="@i" onclick="set_feedback(this)">
                         <span></span>
                         <img src="~/Content/img/chartImg/@(Model.chartTypes[i]).png" height="60px" width="60px" class="img-circle" /> 
                     </div>
                     <strong>@Html.ActionLink(Model.chartTypes[i], "visualizeDataFile", "Task", new { num = i }, null)</strong>
                 </li>
             }
+            @{if (PC)
+                {
+                    <li>
+                        <div class="avatar listrap-toggle" id=@id onclick="set_feedback(this)">
+                            <span></span>
+                            <img src="~/Content/img/chartImg/@(Model.chartTypes[id]).png" height="60px" width="60px" class="img-circle" />
+                        </div>
+                        <strong>@Html.ActionLink(Model.chartTypes[id], "visualizeDataFile", "Task", new { num = id }, null)</strong>
+                    </li>
+                } }
         </ul>
     </div>
     </div>
