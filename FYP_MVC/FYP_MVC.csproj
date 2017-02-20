@@ -311,6 +311,7 @@
     <Content Include="Content\img\2.png" />
     <Content Include="Content\img\3.png" />
     <Content Include="Content\img\4.png" />
+    <Content Include="Content\img\banner5.png" />
     <Content Include="Content\img\barchart.png" />
     <Content Include="Content\img\blog\1.jpg" />
 
@@ -320,6 +321,10 @@
     <Content Include="Content\img\blog\dilshan.jpg" />
     <Content Include="Content\img\blog\lahiru.jpg" />
     <Content Include="Content\img\blog\prasad.jpg" />
+    <Content Include="Content\img\carousel\carousel1.png" />
+    <Content Include="Content\img\carousel\carousel2.png" />
+    <Content Include="Content\img\carousel\carousel3.png" />
+    <Content Include="Content\img\carousel\carousel4.png" />
     <Content Include="Content\img\chartImages\Area chart.png" />
     <Content Include="Content\img\chartImages\Bar chart.png" />
     <Content Include="Content\img\chartImages\Bivariate area chart.png" />
@@ -343,6 +348,8 @@
     <Content Include="Content\img\chartImages\Stacked bar chart.png" />
     <Content Include="Content\img\chartImages\Time Line.png" />
     <Content Include="Content\img\chartImages\Tree Map.png" />
+
+    <Content Include="Content\img\context1.png" />
 
     <Content Include="Content\img\find_user.png" />
     <Content Include="Content\img\Guide.png" />

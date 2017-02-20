@@ -225,16 +225,7 @@ namespace FYP_MVC.Core.ContextRecognizer
             //pythonInfo.FileName = @"C:\Python27\python.exe";
 
 
-            //pythonInfo.FileName = @"C:\Python27\python.exe";
-            //Server.MapPath("~/CSVFinalized")
-            //pythonInfo.FileName = @"/usr/bin/python/python.exe";
-            //
-
-            //pythonInfo.FileName = @"/usr/bin/python";
-            //pythonInfo.FileName = System.Web.Hosting.HostingEnvironment.MapPath("/usr/bin/python/python.exe");
-            //pythonInfo.FileName = HostingEnvironment.MapPath(@"/usr/bin/python/python.exe");
-
-            //pythonInfo.FileName = System.Web.Hosting.HostingEnvironment.MapPath("~/Python/python.exe");
+          
             int temp = col.Data.Count;
             //col.DateValues = new DateTime[temp];
             col.DateValues = new string[temp];
