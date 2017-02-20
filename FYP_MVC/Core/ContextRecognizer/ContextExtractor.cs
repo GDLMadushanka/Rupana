@@ -81,6 +81,7 @@ namespace FYP_MVC.Core.ContextRecognizer
                 else if (DateCount>.6*NumericCount) { col.Context = "Time series"; }
                 //special validation for date time with period ex :- "12.50"
                 if (col.Context.Equals("Time series") && FloatingPointCount > .6* col.Data.Count) { col.Context = "Numeric"; }
+                if(col.Context.Equals("Location") && DateCount > LocationCount) { col.Context = "Time series"; }
             }
             numericTotal = 0f;
 
