@@ -314,9 +314,7 @@
     <Content Include="Content\img\banner5.png" />
     <Content Include="Content\img\barchart.png" />
     <Content Include="Content\img\blog\1.jpg" />
-
     <Content Include="Content\img\chartImg\1.png" />
-
     <Content Include="Content\img\blog\aba.jpg" />
     <Content Include="Content\img\blog\dilshan.jpg" />
     <Content Include="Content\img\blog\lahiru.jpg" />
@@ -348,13 +346,15 @@
     <Content Include="Content\img\chartImages\Stacked bar chart.png" />
     <Content Include="Content\img\chartImages\Time Line.png" />
     <Content Include="Content\img\chartImages\Tree Map.png" />
-
     <Content Include="Content\img\context1.png" />
-
+    <Content Include="Content\img\feedback.png" />
     <Content Include="Content\img\find_user.png" />
     <Content Include="Content\img\Guide.png" />
     <Content Include="Content\img\img.png" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo2.png" />
+    <Content Include="Content\img\logo4.png" />
+    <Content Include="Content\img\logo5.png" />
     <Content Include="Content\img\Pie.png" />
     <Content Include="Content\img\Preloader_1.gif" />
     <Content Include="Content\img\Preloader_2.gif" />
