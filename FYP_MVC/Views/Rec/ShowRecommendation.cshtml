@@ -35,21 +35,21 @@
 
         .listrap .listrap-toggle {
             display: inline-block;
-            width: 60px;
-            height: 60px;
+            width: 90px;
+            height: 90px;
         }
 
             .listrap .listrap-toggle span {
-                background-color: #428bca;
+                background-color: #042e52;
                 opacity: 0.8;
                 z-index: 100;
-                width: 60px;
-                height: 60px;
+                width: 90px;
+                height: 90px;
                 display: none;
                 position: absolute;
                 border-radius: 50%;
                 text-align: center;
-                line-height: 60px;
+                line-height: 90px;
                 vertical-align: middle;
                 color: #ffffff;
             }
@@ -65,25 +65,28 @@
 </style>
 
 
-<h2>Chart Recommendation</h2>
+<h3>Chart Recommendation</h3>
 <div class="row">
+
+    <img style="position:absolute; TOP:70px; RIGHT:0px; HEIGHT:460px" src="~/Content/img/feedback.png">
+
     <div class="col-lg-4">
         <ul class="listrap">
 
-            
+
 
             @{int count = Model.chartTypes.Length;
                 Boolean PC = false;
-                int id=0; }
+                int id = 0; }
             @for (int i = 0; i < count; i++)
             {
-                if (Model.chartTypes[i].Equals("Parallel cordinates")) { PC = true;id = i; continue; }
+                if (Model.chartTypes[i].Equals("Parallel cordinates")) { PC = true; id = i; continue; }
                 <li>
-                    <div class="avatar listrap-toggle"  id="@i" onclick="set_feedback(this)">
+                    <div class="avatar listrap-toggle" id="@i" onclick="set_feedback(this)">
                         <span></span>
-                        <img src="~/Content/img/chartImg/@(Model.chartTypes[i]).png" height="60px" width="60px" class="img-circle" /> 
+                        <img src="~/Content/img/chartImages/@(Model.chartTypes[i]).png" height="90px" width="90px" class="img-circle" />
                     </div>
-                    <strong>@Html.ActionLink(Model.chartTypes[i], "visualizeDataFile", "Task", new { num = i }, null)</strong>
+                    <strong>@Html.ActionLink(Model.chartTypes[i], "visualizeDataFile", "Task", new { num = i },new { @style = "color:black" })</strong>
                 </li>
             }
             @{if (PC)
@@ -91,42 +94,45 @@
                     <li>
                         <div class="avatar listrap-toggle" id=@id onclick="set_feedback(this)">
                             <span></span>
-                            <img src="~/Content/img/chartImg/@(Model.chartTypes[id]).png" height="60px" width="60px" class="img-circle" />
+                            <img src="~/Content/img/chartImg/@(Model.chartTypes[id]).png" height="100px" width="100px" class="img-circle" />
                         </div>
                         <strong>@Html.ActionLink(Model.chartTypes[id], "visualizeDataFile", "Task", new { num = id }, null)</strong>
                     </li>
                 } }
         </ul>
     </div>
-    </div>
+</div>
 
 
 <br />
-<a href="#" id="show" class="btn btn-success">Load more ...</a>
+<a href="#" id="show" class="btn btn-primary">Load more</a>
+<a href="#" id="feedback" class="btn btn-primary">Save Feedback</a>
 <br />
-    <div id="hidden">
-        <div class="row">
-            <div class="col-lg-4">
-                <ul class="listrap">
+<div id="hidden">
+    <div class="row">
+        <div class="col-lg-4">
+            <ul class="listrap">
 
-                    @{int count2 = Model.more_chartTypes.Length;
-                        if (count2 > 0) {
-                    for (int i = count; i < count + count2; i++)
+                @{int count2 = Model.more_chartTypes.Length;
+                    if (count2 > 0)
                     {
-                        <li>
-                            <div class="listrap-toggle" id="@i" onclick="set_feedback(this)">
-                                <span></span>
-                                <img src="~/Content/img/chartImg/@(Model.more_chartTypes[i-count]).png" height="60px" width="60px" class="img-circle" /> 
-                            </div>
-                            <strong>@Html.ActionLink(Model.more_chartTypes[i - count], "visualizeDataFile", "Task", new { num = i }, null)</strong>
-                        </li>
-                    }} }
-                </ul>
-            </div>
+                        for (int i = count; i < count + count2; i++)
+                        {
+                            <li>
+                                <div class="listrap-toggle" id="@i" onclick="set_feedback(this)">
+                                    <span></span>
+                                    <img src="~/Content/img/chartImg/@(Model.more_chartTypes[i-count]).png" height="60px" width="60px" class="img-circle" />
+                                </div>
+                                <strong>@Html.ActionLink(Model.more_chartTypes[i - count], "visualizeDataFile", "Task", new { num = i }, null)</strong>
+                            </li>
+                        }
+                    } }
+            </ul>
         </div>
     </div>
-<a href="#" id="feedback" class="btn btn-warning">Save Feedback</a>
-    <script>
+</div>
+
+<script>
         var selected_chartId = -1;
         var feebackSaved = false;
 
@@ -154,15 +160,15 @@
             else if (feebackSaved) { alert("Feedback already saved"); }
                             });
 
-    
+
 
 function set_feedback(elem){
 $(".listrap-toggle").parent().removeClass();
                                 elem.parentElement.className="active";
                                 selected_chartId = elem.id;
-                             
+
 
                             }
 
 
-    </script>
+</script>
