@@ -7,8 +7,57 @@
 
 <h2>Choose required columns</h2>
 <h4>@ViewBag.errorMessage</h4>
-<span class="label label-primary">@Model.filename</span>
+
+
 @{Html.BeginForm("showContextInfo", "Task", FormMethod.Post);
+    
+    <div class="row">
+        <div class="col-lg-4">
+            <label class="col-lg-4 intention-label">Intension :</label>@*<a href="@Url.Action("Guide", "Blog")" target="_blank" >Guide to choose</a>*@
+            @{
+                List<SelectListItem> lis = new List<SelectListItem>();
+                SelectListItem item_Distribution = new SelectListItem();
+                item_Distribution.Text = "Distribution";
+                item_Distribution.Value = "Distribution";
+
+                SelectListItem item_Comparison = new SelectListItem();
+                item_Comparison.Text = "Comparison";
+                item_Comparison.Value = "Comparison";
+
+                SelectListItem item_Relationship = new SelectListItem();
+                item_Relationship.Text = "Relationship";
+                item_Relationship.Value = "Relationship";
+
+                SelectListItem item_Composition = new SelectListItem();
+                item_Composition.Text = "Composition";
+                item_Composition.Value = "Composition";
+
+                SelectListItem item_None = new SelectListItem();
+                item_None.Text = "None";
+                item_None.Value = "None";
+
+                item_None.Selected = true;
+                lis.Add(item_None);
+                lis.Add(item_Comparison);
+                lis.Add(item_Composition);
+                lis.Add(item_Distribution);
+                lis.Add(item_Relationship);
+
+
+                @Html.DropDownListFor(c => c.Intension, lis, Model.Intension, new { @class = "form-control form-control-mainPage" });
+
+            }
+        </div>
+        <div class="col-lg-6">
+        <button  type="submit" class="btn btn-primary">submit</button>
+            </div>
+    </div>
+   
+
+    
+    <br/><br/>
+
+    <span class="label label-primary">@Model.filename</span>
     <div class="row">
         <div class="col-lg-8">
             <div style="width:1100px;overflow: scroll;height:400px">
@@ -42,47 +91,18 @@
         <div class="col-lg-4"></div>
     </div>
    <br />
-    <div class="row">
-       
-        <div class="col-lg-2">
-            <label>Intension :</label>
-            @{
-                List<SelectListItem> lis = new List<SelectListItem>();
-                SelectListItem item_Distribution = new SelectListItem();
-                item_Distribution.Text = "Distribution";
-                item_Distribution.Value = "Distribution";
-
-                SelectListItem item_Comparison = new SelectListItem();
-                item_Comparison.Text = "Comparison";
-                item_Comparison.Value = "Comparison";
-
-                SelectListItem item_Relationship = new SelectListItem();
-                item_Relationship.Text = "Relationship";
-                item_Relationship.Value = "Relationship";
-
-                SelectListItem item_Composition = new SelectListItem();
-                item_Composition.Text = "Composition";
-                item_Composition.Value = "Composition";
-
-                SelectListItem item_None = new SelectListItem();
-                item_None.Text = "None";
-                item_None.Value = "None";
-
-                item_None.Selected = true;
-                lis.Add(item_None);
-                lis.Add(item_Comparison);
-                lis.Add(item_Composition);
-                lis.Add(item_Distribution);
-                lis.Add(item_Relationship);
-
-
-                @Html.DropDownListFor(c => c.Intension, lis, Model.Intension, new { @class = "form-control" });
-            }
-        </div>
-    </div>
-
-    <br /><br />
-
-    <button type="submit">submit</button>
-    <br /><br /><br />
+    
 }
+
+<style>
+    .form-control-mainPage {
+    width:62%;
+
+    
+    }
+    .intention-label {
+    
+    margin-top:6px;
+    
+    }
+</style>

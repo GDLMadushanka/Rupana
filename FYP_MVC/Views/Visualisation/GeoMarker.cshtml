@@ -1,10 +1,11 @@
-﻿@model FYP_MVC.Models.CoreObjects.ChartComponent
+﻿@model FYP_MVC.Models.CoreObjects.ChartComponentViewModel
+
 @{
     ViewBag.Title = "GeoMarker";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>GeoMarker @Model.name</h2>
+<h2>GeoMarker</h2>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa2l_21P4jy0SvWgS_xTuWXa33WpliZSQ&callback=initMap"
         type="text/javascript"></script>
@@ -18,35 +19,16 @@
     google.charts.setOnLoadCallback(drawVisualization);
 
     function drawVisualization() { // grab the CSV
-        @*var a2 =  @Html.Raw(Json.Encode(ViewBag.a));
-        alert("First value of first term: " + a2[0][0] + "Second value of first term: " + a2[0][1]);*@
-            //var arrayData = ['a','b'];
-            //var numOfColumns = 5
-            //var colors = ['red', 'blue', 'green'];
-
-            //var splitArray = arrayData.split(",");
-            //alert(splitArray);
-            //var numOfRows = splitArray.length/numOfColumns;
-
+        
         var arr = [];
-
-        var model = @Html.Raw(Json.Encode(Model));
-      
+        var viewModel = @Html.Raw(Json.Encode(Model));
+        var model=viewModel.chartComponent;
+        var mapping=viewModel.mapping;
+        console.log(model);
+        console.log(mapping);
         var numOfRows=model.columnList[0].data.length;
         var numOfColumns=model.columnList.length;
-        var resoulution;
-        var region;
-
-        console.log(model);
-
-
-        for (var y = 0; y < numOfColumns; y++) {
-            if(model.columnList[y].dataType.dataType == "Location"){
-                resoulution = model.columnList[y].dataType.resolution;
-                region = model.columnList[y].dataType.region;
-            }
-
-        }
+   
 
         arr[0] = [];
 
@@ -61,9 +43,29 @@
             }
         }
 
-      
+        //mapping
+        var finalArray = [];
 
-        var data = new google.visualization.arrayToDataTable(arr);
+        for(var x=0;x<arr.length;x++){
+            finalArray[x] = [];
+            for(var y=0;y < mapping.length; y++){
+                finalArray[x][mapping[y]-1]=arr[x][y];
+            }
+        }
+
+        var resoulution;
+        var region;
+
+        for (var y = 0; y < numOfColumns; y++) {
+            if(model.columnList[y].dataType.dataType == "Location"){
+                resoulution = model.columnList[y].dataType.resolution;
+                region = model.columnList[y].dataType.region;
+            }
+
+        }
+
+        var data = new google.visualization.arrayToDataTable(finalArray);
+        var image;
 
         var wrapper = new google.visualization.ChartWrapper({
             chartType: 'GeoChart',
@@ -75,12 +77,48 @@
             containerId: 'chart'
         });
 
-         //google.visualization.events.addListener(wrapper, 'ready', function () {
-         //  var image = wrapper.getChart().getImageURI();
-         //  window.open(image);
-         //});
+        google.visualization.events.addListener(wrapper, 'ready', function () {
+            image = wrapper.getChart().getImageURI();
+        }); 
 
         wrapper.draw();
+        
+        //save AS
+        $("#saveAs").change(function(){   
+            var type = $('#saveAs :selected').val();
+            if(type == "png"){
+
+                console.log(image);
+                var imageData = image.split(',')[1];
+                var a = $("<a>").attr("href", "data:image/png;base64," + imageData )
+                            .attr("download","image.png")
+                            .appendTo("body");
+                a[0].click();
+                a.remove();
+
+            }else if(type == "html"){
+
+                var firstpart = "<!DOCTYPE html><html><head><title></title></head><body>";
+                var lastpart = "</body></html>";
+                var divdata = $('#chart').html();     
+                var htmlFile = firstpart+divdata+lastpart;
+                download("test.html",htmlFile);
+            }   
+        });
+
+        function download(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
 
         //title
         $("#title").keyup(function(){
@@ -161,7 +199,18 @@
 
     </br>
 <div class="container">
-
+    <div class="row">
+        <div class="col-xs-2">
+            <div class="form-group">
+                <select id="saveAs" class="selectpicker form-control">
+                    <option value="" disabled selected>Download As</option>
+                    <option value="png">png</option>
+                    <option value="html">html</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    </br>
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home"><h4>Chart</h4></a></li>
     </ul>

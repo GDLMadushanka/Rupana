@@ -3,8 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lumino - Dashboard</title>
-    
+
+    <title>Roopana</title>
+
+
+    <!--about us-->
+    <link href="~/Content/css/about.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 
     <!--carousel-->
     <script src="~/Content/js/carousel.js"></script>
@@ -14,7 +20,9 @@
 
     <!--parallel Cor-->
     <link href="~/Content/css/parallelCor.css" rel="stylesheet" />
-    <script src="//d3js.org/d3.v3.min.js"></script>
+
+    
+ 
    
 
     <!--Bivariate Area-->
@@ -26,18 +34,27 @@
 
     <script src="~/Content/js/jquery.csv.js"></script>
     <script src="~/Content/js/bootstrap.min.js"></script>
-    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="~/Content/js/bootstrap-dropdown.js"></script>
-    <link href="~/Content/css/datepicker3.css" rel="stylesheet" />
+    <script src="~/Content/js/date.js"></script>
+  
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/styles.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet">
+
+   
+
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
     <script src="~/Content/js/blog.js"></script>
+ 
     <!--Icons-->
     <link href="~/Content/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="~/Content/js/lumino.glyphs.js"></script>
+
+  
 
     <script>
         (function (h, o, t, j, a, r) {
@@ -50,6 +67,9 @@
         })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
 
+
+    <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js'></script>   
+
 </head>
 
 
@@ -57,7 +77,7 @@
 <body>
     <div class="se-pre-con"></div>
     <div id="wrapper">
-        <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: #00aeef;">
+        <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: #32454e;">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
@@ -68,9 +88,12 @@
                     </button>
 
 
-                    <img src="~/Content/img/name.png" width="150" height="40" style="margin-top: 5px" />
+                    <img src="~/Content/img/logo5.png" height="50" style="margin-top: 2px; margin-left:15px" />
+                  
+                   
+                  
 
-                    <ul class="user-menu">
+                    <ul class="user-menu" >
                         <li class="dropdown pull-right">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> @Session["userName"] <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -92,38 +115,16 @@
                 </div>
             </form>
             <ul class="nav menu">
-                <li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-                <li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Widgets</a></li>
-                <li><a href="@Url.Action("ChartDiscriptionPage", "Blog")"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
-                <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>
-
+                <li class="active"><a href="@Url.Action("Home", "Task")"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Home</a></li>
                 <li><a href="@Url.Action("UploadCSV", "Task")"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> New Task</a></li>
-                <li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>
-                <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Icons</a></li>
-                <li class="parent ">
-                    <a href="#">
-                        <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Dropdown
-                    </a>
-                    <ul class="children collapse" id="sub-item-1">
-                        <li>
-                            <a class="" href="#">
-                                <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 1
-                            </a>
-                        </li>
-                        <li>
-                            <a class="" href="#">
-                                <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 2
-                            </a>
-                        </li>
-                        <li>
-                            <a class="" href="#">
-                                <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 3
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href="@Url.Action("Guide", "Blog")"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Guide </a></li>
+                <li><a href="@Url.Action("ChartDiscriptionPage", "Blog")"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
+
+                <li><a href="@Url.Action("publications", "Blog")"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Publications</a></li>
+                <li><a href="@Url.Action("DevTeam", "Blog")"><svg class="glyph stroked round coffee mug"><use xlink:href="#stroked-round-coffee-mug" /></svg> Dev Team</a></li>
+             
                 <li role="presentation" class="divider"></li>
-                <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>
+      
             </ul>
         </div><!--/.sidebar-->
 
@@ -131,13 +132,13 @@
             <div class="row">
                 <ol class="breadcrumb">
                     <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-                    <li class="active">Icons</li>
+                    <li class="active" style="color:white">@ViewBag.path</li>
                 </ol>
             </div><!--/.row-->
 
 
             @RenderBody()
-
+            
 
 
         </div>	<!--/.main-->
@@ -151,11 +152,18 @@
 
     <script>
 
+      
 
         $(window).load(function () {
             setTimeout(function () {
                 $(".se-pre-con").fadeOut("slow");
             });
+            var isFBAuthenticated = '@Session["isFBAuthenticated"]';
+            
+            if (isFBAuthenticated === "True") {
+                $("#btnLogout").css("visibility", "hidden")
+            }
+           
         });
 
         function statusChangeCallback(response) {
@@ -300,7 +308,7 @@
                 if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
             })
 
-    
+
 
     </script>
 </body>
