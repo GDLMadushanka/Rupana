@@ -668,6 +668,37 @@ namespace FYP_MVC.Controllers
             return RedirectToAction("Home", "Admin");
         }
 
+
+
+
+        public ActionResult RulesList()
+        {
+            ViewData["activeMenu"] = "RulesList";
+            return View(db.userFeedBacks.ToList());
+        }
+        public ActionResult AddNewRules()
+        {
+            ViewData["activeMenu"] = "RulesList";
+            RuleTemplate template = new RuleTemplate();
+            return View();
+        }
+        public string AddNewRulesVal(RuleTemplate template)
+        {
+            return "name "+template.name+"num dim:"+template.name;
+            //return RedirectToAction("RuleList", "Admin");
+        }
+        public ActionResult DetailsRulesList(int id)
+        {
+
+            ViewData["activeMenu"] = "RulesList";
+            return View(db.userFeedBacks.Find(id));
+        }
+        public ActionResult EditRulesList(int id)
+        {
+            ViewData["activeMenu"] = "RulesList";
+            return View(db.userFeedBacks.Find(id));
+        }
+
         public String CheckCountry()
         {
             Column col = new Column();

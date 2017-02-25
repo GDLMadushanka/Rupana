@@ -1,0 +1,224 @@
+﻿@model FYP_MVC.Models.DAO.RuleTemplate
+
+@{
+    ViewBag.Title = "AddNewRules";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddNewRules</h2>
+
+
+@using (Html.BeginForm("AddNewRulesVal", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>userFeedBack</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+          </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.numOfDim, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+@Html.TextBoxFor(m => m.numOfDim, new { @class = "form-control" })
+           </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.intention, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="intention">
+                    <option value="Comparison">Comparison</option>
+                    <option value="Composition">Composition</option>
+                    <option value="Destribution">Destribution</option>
+                    <option value="Relationship">Relationship</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim1_IsContinuous, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.dim1_IsContinuous, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim1_Cardinality, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim1_cardinality">
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Any">Any</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim1_context, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim1_context">
+                    <option value="Numerical">Numerical</option>
+                    <option value="Location">Location</option>
+                    <option value="Time series">Time series</option>
+                    <option value="Nominal">Nominal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim2_IsContinuous, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.dim2_IsContinuous, new { @class = "form-control" })
+                        </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim2_Cardinality, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim2_Cardinality">
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Any">Any</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim2_context, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim2_context">
+                    <option value="Numerical">Numerical</option>
+                    <option value="Location">Location</option>
+                    <option value="Time series">Time series</option>
+                    <option value="Nominal">Nominal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim3_IsContinuous, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.dim3_IsContinuous, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim3_Cardinality, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim3_Cardinality">
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Any">Any</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim3_context, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim3_context">
+                    <option value="Numerical">Numerical</option>
+                    <option value="Location">Location</option>
+                    <option value="Time series">Time series</option>
+                    <option value="Nominal">Nominal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim4_IsContinuous, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.dim4_IsContinuous, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim4_Cardinality, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim4_Cardinality">
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Any">Any</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim4_context, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim4_context">
+                    <option value="Numerical">Numerical</option>
+                    <option value="Location">Location</option>
+                    <option value="Time series">Time series</option>
+                    <option value="Nominal">Nominal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim5_IsContinuous, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.dim5_IsContinuous, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim5_Cardinality, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim5_Cardinality">
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Any">Any</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dim5_context, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="StudentGender" name="dim5_context">
+                    <option value="Numerical">Numerical</option>
+                    <option value="Location">Location</option>
+                    <option value="Time series">Time series</option>
+                    <option value="Nominal">Nominal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.recommendation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.score, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

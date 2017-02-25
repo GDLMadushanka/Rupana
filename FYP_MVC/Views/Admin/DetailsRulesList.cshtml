@@ -1,0 +1,179 @@
+﻿@model FYP_MVC.Models.DAO.userFeedBack
+
+@{
+    ViewBag.Title = "DetailsRulesList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DetailsRulesList</h2>
+
+<div>
+    <h4>userFeedBack</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numOfDim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numOfDim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intention)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intention)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim1_IsContinuous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim1_IsContinuous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim1_Cardinality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim1_Cardinality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim1_context)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim1_context)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim2_IsContinuous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim2_IsContinuous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim2_Cardinality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim2_Cardinality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim2_context)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim2_context)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim3_IsContinuous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim3_IsContinuous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim3_Cardinality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim3_Cardinality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim3_context)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim3_context)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim4_IsContinuous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim4_IsContinuous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim4_Cardinality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim4_Cardinality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim4_context)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim4_context)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim5_IsContinuous)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim5_IsContinuous)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim5_Cardinality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim5_Cardinality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dim5_context)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dim5_context)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recommendation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recommendation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.score)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
