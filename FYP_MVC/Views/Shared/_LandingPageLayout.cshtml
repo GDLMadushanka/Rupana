@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Roopana</title>
+
+    <!-- core CSS -->
+    <link href="~/Content/landingpage/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/landingpage/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/landingpage/css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/landingpage/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/Content/landingpage/css/main.css" rel="stylesheet">
+    <link href="~/Content/landingpage/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<style>
+    #main-slider .carousel .carousel-content {
+        margin-top: 0;
+    }
+</style>
+<body class="homepage">
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <div class="top-number"><p><i class="fa fa-envelope"></i>  admin@roopana.net</p></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                        <div class="social">
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="~/Content/landingpage/images/logo.png" height="50px" alt="logo"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li @if (ViewData["activeMenu"] == "Home") { @:class= "active" 
+                            }
+                        ><a href="Index">Home</a></li>
+                        <li @if (ViewData["activeMenu"] == "AboutUs") { @:class= "active" 
+                            }
+                        ><a href="AboutUs">About Us</a></li>
+                        <li @if (ViewData["activeMenu"] == "Charts") { @:class= "active" 
+                            }
+                        ><a href="Charts">Charts</a></li>
+                        <li @if (ViewData["activeMenu"] == "Guide") { @:class= "active" 
+                            }
+                        ><a href="Guide">Guide</a></li>
+                        <li><a href="../Authentication/login">Login/Signup</a></li>
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+
+    </header><!--/header-->
+    @RenderBody()
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2017 Roopana.net All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Chart</a></li>
+                        <li><a href="#">Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+    <script src="~/Content/landingpage/js/jquery.js"></script>
+    <script src="~/Content/landingpage/js/bootstrap.min.js"></script>
+    <script src="~/Content/landingpage/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Content/landingpage/js/jquery.isotope.min.js"></script>
+    <script src="~/Content/landingpage/js/main.js"></script>
+    <script src="~/Content/landingpage/js/wow.min.js"></script>
+</body>
+</html>

@@ -33,8 +33,23 @@ namespace FYP_MVC.Core.ContextRecognizer
         float LocationCount = 0;
         float DateCount = 0;
         float FloatingPointCount = 0;
+        public float getNumericCount()
+        {
+            return NumericCount;
+        }
+        public float getLocationCount()
+        {
+            return LocationCount;
+        }
+        public float getDateCount()
+        {
+            return DateCount;
+        }
+        public float getFloatingPointCount()
+        {
+            return FloatingPointCount;
+        }
 
-      
         //tempory numeric list
         float numericTotal = 0f;
 

@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LandingPageLayout.cshtml";
+}
+
+<section id="main-slider" class="no-margin">
+    <div class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#main-slider" data-slide-to="1"></li>
+            <li data-target="#main-slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active" style="background-image: url(/Content/landingpage/images/slider/bg1.png)">
+                <div class="container">
+                    <div class="row slide-margin">
+                        <div class="col-sm-6">
+                            <div class="carousel-content">
+                                <h1 class="animation animated-item-1">User Feedback</h1>
+                                <h2 class="animation animated-item-2">Capable of transforming user feedbacks for improve recommendation</h2>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background-image: url(/Content/landingpage/images/slider/bg2.png)">
+                <div class="container">
+                    <div class="row slide-margin">
+                        <div class="col-sm-6">
+                            <div class="carousel-content">
+                                <h1 class="animation animated-item-1">Expertise Knowledge</h1>
+                                <h2 class="animation animated-item-2">Get expertise knowledge on data visualization through roopana.net</h2>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background-image: url(/Content/landingpage/images/slider/bg3.png)">
+                <div class="container">
+                    <div class="row slide-margin">
+                        <div class="col-sm-6">
+                            <div class="carousel-content">
+                                <h1 class="animation animated-item-1">23 Chart Type</h1>
+                                <h2 class="animation animated-item-2">Get the visualization of your dataset through google charts and d3 with png and html</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.carousel-inner-->
+    </div><!--/.carousel-->
+    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+</section><!--/#main-slider-->
+<section id="feature">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Features</h2>
+            <p class="lead">
+                It's easy to use, Just upload your dataset into our system and get back most suitable graph type for visualization
+                <br> Download graph in png or html format
+            </p>
+        </div>
+        <div class="row">
+            <div class="features">
+                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="feature-wrap">
+                        <i class="fa fa-bullhorn"></i>
+                        <h2>Context recognition</h2>
+                        <h3>Automatically detect context of the dataset<br></h3>
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="feature-wrap">
+                        <i class="fa fa-comments"></i>
+                        <h2>Recommend chart</h2>
+                        <h3>Recommend possible graph type to the user based on context of the data</h3>
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="feature-wrap">
+                        <i class="fa fa-cloud-download"></i>
+                        <h2>Support 5 Context type</h2>
+                        <h3>Support for Numeric, Date time, Continuous, Location and Nominal<br> </h3>
+                    </div>
+                </div><!--/.col-md-4-->
+
+                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="feature-wrap">
+                        <i class="fa fa-leaf"></i>
+                        <h2>23 Graph type</h2>
+                        <h3>Support basic 23 graph types as recommendation</h3>
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="feature-wrap">
+                        <i class="fa fa-cogs"></i>
+                        <h2>Send feedback</h2>
+                        <h3>Send back your feedback to us to improve recommendation</h3>
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="feature-wrap">
+                        <i class="fa fa-facebook"></i>
+                        <h2>Login with facebook</h2>
+                        <h3>Tired of long sign up process? just use facebook account to login</h3>
+                    </div>
+                </div><!--/.col-md-4-->
+            </div><!--/.services-->
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#feature-->
+<section id="conatcat-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="pull-left">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="media-body">
+                        <h2>Have a question or need a custom quote?</h2>
+                        <p>Send you have questions, feedbacks or Sugestion contact us through email info@roopana.net</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/.container-->
+</section><!--/#conatcat-info-->
+<section id="bottom">
+    <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Copyright</a></li>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Developers</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Development</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+            <div class="col-md-3 col-sm-6">
+                <div class="widget">
+                    <h3>Our Technologies</h3>
+                    <ul>
+                        <li><a href="#">Visual Studio</a></li>
+                        <li><a href="#">.NET framework</a></li>
+                        <li><a href="#">MS SQL server</a></li>
+                        <li><a href="#">JQuery</a></li>
+                        <li><a href="#">Bootstrap</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+        </div>
+    </div>
+</section><!--/#bottom-->
+

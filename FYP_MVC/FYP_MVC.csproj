@@ -185,6 +185,7 @@
     <Compile Include="Controllers\chartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\RecController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Controllers\VisualisationController.cs" />
@@ -263,6 +264,7 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DAO\Recommendation_Results.cs" />
+    <Compile Include="Models\DAO\RuleTemplate.cs" />
     <Compile Include="Models\DAO\table.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -283,6 +285,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Unit Testing\ContextExtractorTest.cs" />
+    <Compile Include="Unit Testing\ControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -517,6 +520,15 @@
     <Content Include="Views\Visualisation\ParallelCordinates.cshtml" />
     <Content Include="Views\Visualisation\ChartDetails.cshtml" />
     <Content Include="Views\Blog\ChartDiscriptionPage.cshtml" />
+    <Content Include="Views\Admin\RulesList.cshtml" />
+    <Content Include="Views\Admin\DetailsRulesList.cshtml" />
+    <Content Include="Views\Admin\EditRulesList.cshtml" />
+    <Content Include="Views\Admin\AddNewRules.cshtml" />
+    <Content Include="Views\Shared\_LandingPageLayout.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="Views\Page\AboutUs.cshtml" />
+    <Content Include="Views\Page\Charts.cshtml" />
+    <Content Include="Views\Page\Guide.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
