@@ -53,85 +53,93 @@
     <hr />
     foreach (var dimList in Model.dimentionList)
     {
-        <h4>Dimension @(dimList.dimensionIndex + 1)</h4>
-        @Html.HiddenFor(m => m.dimentionList[dimList.dimensionIndex-1].dimensionIndex, new { @Value = dimList.dimensionIndex })
         <div class="form-group">
-            @Html.LabelFor(m => dimList.isContineous, new { @class = "col-md-2 control-label" })
+            <label class="col-md-2 control-label" for="dimCount">Dimension Count @(dimList.dimensionIndex)</label>
+
             <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex-1].isContineous, new { @checked = "checked" })
+                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].isSelected, new { @checked = "checked" })
 
             </div>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(m => dimList.isSelected, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex-1].isSelected, new { @checked = "checked" })
-            </div>
-        </div>
-        <h5>Cardinality</h5>
-        <div class="form-group">
-            @Html.LabelFor(m => dimList.cardinalityHigh, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex-1].cardinalityHigh, new { @checked = "checked" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => dimList.cardinalityMedium, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].cardinalityMedium, new { @checked = "checked" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => dimList.cardinalityLow, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].cardinalityLow, new { @checked = "checked" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => dimList.cardinalityAny, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].cardinalityAny, new { @checked = "checked" })
-            </div>
-        </div>
-
-        <h5>Context</h5>
-        <div class="form-group">
-            @Html.LabelFor(m => dimList.contextNumeric, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextNumeric, new { @checked = "checked" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => dimList.contextPercentage, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextPercentage, new { @checked = "checked" })
-            </div>
-        </div>
-            <div class="form-group">
-                @Html.LabelFor(m => dimList.contextTimeseries, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextTimeseries, new { @checked = "checked" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => dimList.contextLocation, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextLocation, new { @checked = "checked" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => dimList.contextNominal, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextNominal, new { @checked = "checked" })
-                </div>
-            </div>
-            <hr />
     }
+    <div class="row">
+        @foreach (var dimList in Model.dimentionList)
+        {
+            <div class="col-md-6">
+                <h4>Dimension @(dimList.dimensionIndex)</h4>
+                @Html.HiddenFor(m => m.dimentionList[dimList.dimensionIndex - 1].dimensionIndex, new { @Value = dimList.dimensionIndex })
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.isContineous, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].isContineous, new { @checked = "checked" })
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Save" />
+                    </div>
+                </div>
+                <h5>Cardinality</h5>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.cardinalityHigh, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].cardinalityHigh, new { @checked = "checked" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.cardinalityMedium, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].cardinalityMedium, new { @checked = "checked" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.cardinalityLow, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].cardinalityLow, new { @checked = "checked" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.cardinalityAny, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].cardinalityAny, new { @checked = "checked" })
+                    </div>
+                </div>
+
+                <h5>Context</h5>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.contextNumeric, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextNumeric, new { @checked = "checked" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.contextPercentage, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextPercentage, new { @checked = "checked" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.contextTimeseries, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextTimeseries, new { @checked = "checked" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.contextLocation, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextLocation, new { @checked = "checked" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => dimList.contextNominal, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-6">
+                        @Html.CheckBoxFor(m => m.dimentionList[dimList.dimensionIndex - 1].contextNominal, new { @checked = "checked" })
+                    </div>
+                </div>
+                <hr />
+                </div>
+                }
+            </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Save" />
+            </div>
         </div>
-    </div>
 
-}
+        }
