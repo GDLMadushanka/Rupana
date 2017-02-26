@@ -94,9 +94,9 @@
                     <li>
                         <div class="avatar listrap-toggle" id=@id onclick="set_feedback(this)">
                             <span></span>
-                            <img src="~/Content/img/chartImg/@(Model.chartTypes[id]).png" height="100px" width="100px" class="img-circle" />
+                            <img src="~/Content/img/chartImages/@(Model.chartTypes[id]).png" height="90px" width="90px" class="img-circle" />
                         </div>
-                        <strong>@Html.ActionLink(Model.chartTypes[id], "visualizeDataFile", "Task", new { num = id }, null)</strong>
+                        <strong>@Html.ActionLink(Model.chartTypes[id], "visualizeDataFile", "Task", new { num = id }, new { @style = "color:black" })</strong>
                     </li>
                 } }
         </ul>
@@ -121,9 +121,9 @@
                             <li>
                                 <div class="listrap-toggle" id="@i" onclick="set_feedback(this)">
                                     <span></span>
-                                    <img src="~/Content/img/chartImg/@(Model.more_chartTypes[i-count]).png" height="60px" width="60px" class="img-circle" />
+                                    <img src="~/Content/img/chartImages/@(Model.more_chartTypes[i-count]).png" height="90px" width="90px" class="img-circle" />
                                 </div>
-                                <strong>@Html.ActionLink(Model.more_chartTypes[i - count], "visualizeDataFile", "Task", new { num = i }, null)</strong>
+                                <strong>@Html.ActionLink(Model.more_chartTypes[i - count], "visualizeDataFile", "Task", new { num = i },new { @style = "color:black" })</strong>
                             </li>
                         }
                     } }

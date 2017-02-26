@@ -45,6 +45,9 @@
         var mapping=viewModel.mapping;
         var numOfRows=model.columnList[0].data.length;
         var numOfColumns=model.columnList.length;
+
+        console.log(mapping);
+
         arr[0] = [];
         var headers = [];
         for (var i = 0; i < numOfColumns; i++) {
@@ -76,7 +79,7 @@
 
 
         x.domain(dimensions = d3.keys(cars[0]).filter(function (d) {
-            return d != headers[0] && (y[d] = d3.scale.linear()
+            return d != headers[mapping[0]-1] && (y[d] = d3.scale.linear()
                 .domain(d3.extent(cars, function (p) { return +p[d]; }))
                 .range([height, 0]));
         }));

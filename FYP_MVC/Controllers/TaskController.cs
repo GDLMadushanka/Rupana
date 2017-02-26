@@ -353,18 +353,26 @@ namespace FYP_MVC.Controllers
             chViz.chrtCom.name = chart;
             chViz.chrtCom = converter.Convert(csv, chViz.chrtCom);
            
-
+            if (recCount <= num)
+            {
+                num -= recCount;
+                TempData["mapping"] = chViz.more_mappingList.ToList().ElementAt(num);
+            }
+            else
+            {
+                TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+            }
             switch (chart)
             {
                 case ("Area chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                     
                         TempData["myObject"] = chViz;                    
                         return RedirectToAction("AreaChart", "Visualisation");
                     }
                 case ("Stacked bar chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+        
                         TempData["myObject"] = chViz;
                         return RedirectToAction("StackedBarChart", "Visualisation");
 
@@ -372,7 +380,7 @@ namespace FYP_MVC.Controllers
 
                 case ("Pin point location  map"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                 
                         TempData["myObject"] = chViz;
                         return RedirectToAction("GeoMarker", "Visualisation");
 
@@ -380,7 +388,7 @@ namespace FYP_MVC.Controllers
 
                 case ("Bar chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                      
                         TempData["myObject"] = chViz;
                         return RedirectToAction("BarChart", "Visualisation");
 
@@ -388,104 +396,104 @@ namespace FYP_MVC.Controllers
 
                 case ("Pie chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                
                         TempData["myObject"] = chViz;
                         return RedirectToAction("PieChart", "Visualisation");
 
                     }
                 case ("Tree Map"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                    
                         TempData["myObject"] = chViz;
                         return RedirectToAction("TreeMap", "Visualisation");
 
                     }
                 case ("Stacked area chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                     
                         TempData["myObject"] = chViz;
                         return RedirectToAction("StackedAreaChart", "Visualisation");
                     }
                 case ("Nomalized stacked bar chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                       
                         TempData["myObject"] = chViz;
                         return RedirectToAction("NormalizedStackedBarChart", "Visualisation");
                     }
                 case ("Scatterplot"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                      
                         TempData["myObject"] = chViz;
                         return RedirectToAction("Scatterplot", "Visualisation");
 
                     }
                 case ("Mark Area  map"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                   
                         TempData["myObject"] = chViz;
                         return RedirectToAction("GeoRegion", "Visualisation");
 
                     }
                 case ("Bubble chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                  
                         TempData["myObject"] = chViz;
                         return RedirectToAction("BubbleChart", "Visualisation");
                     }
                 case ("Calender view chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                    
                         TempData["myObject"] = chViz;
                         return RedirectToAction("CalenderChart", "Visualisation");
 
                     }
                 case ("Clusture dendogram"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                 
                         TempData["myObject"] = chViz;
                         return RedirectToAction("WordChart", "Visualisation");
 
                     }
                 case ("Parallel cordinates"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                        
                         TempData["myObject"] = chViz;
                         return RedirectToAction("ParallelCordinates", "Visualisation");
                     }
                 case ("Sankey diagram"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+         
                         TempData["myObject"] = chViz;
                         return RedirectToAction("SankeyDiagram", "Visualisation");
                     }
                 case ("Boxplot"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+               
                         TempData["myObject"] = chViz;
                         return RedirectToAction("Boxplot", "Visualisation");
                     }
                 case ("Line chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                       
                         TempData["myObject"] = chViz;
                         return RedirectToAction("LineChart", "Visualisation");
                     }
                 case ("Normalized stacked area chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                      
                         TempData["myObject"] = chViz;
                         return RedirectToAction("NormalizedStackedAreaChart", "Visualisation");
 
                     }
                 case ("Histrogram"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                 
                         TempData["myObject"] = chViz;
                         return RedirectToAction("Histogram", "Visualisation");
                     }
                 case ("Time Line"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+
                         TempData["myObject"] = chViz;
                         return RedirectToAction("TimeLine", "Visualisation");
                     }
@@ -493,14 +501,14 @@ namespace FYP_MVC.Controllers
                     
                 case ("Grouped bar chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+              
                         TempData["myObject"] = chViz;
                         return RedirectToAction("BarChart", "Visualisation");
                     }
 
                 case ("Muiltiple Bar chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+
                         TempData["myObject"] = chViz;
                         return RedirectToAction("BarChart", "Visualisation");
                     }
@@ -508,7 +516,7 @@ namespace FYP_MVC.Controllers
 
                 case ("Bivariate area chart"):
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                     
                         TempData["myObject"] = chViz;
                         return RedirectToAction("BivariateAreaChart", "Visualisation");
                     }
@@ -516,7 +524,7 @@ namespace FYP_MVC.Controllers
 
                 default:
                     {
-                        TempData["mapping"] = chViz.mappingList.ToList().ElementAt(num);
+                     
                         TempData["myObject"] = chViz;
                         //return RedirectToAction("AreaChart", "Visualisation", new { chviz = chViz });
                         return RedirectToAction("AreaChart", "Visualisation");

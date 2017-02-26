@@ -27,20 +27,19 @@
         for (var y = 0; y < numOfColumns; y++) {
             arr[0][y] =model.columnList[y].columnHeader;
         }
+        
 
         for(var x = 1; x <=numOfRows ; x++){
             arr[x] = [];
             for (var y = 0; y < numOfColumns; y++) {
-             
+                console.log(model.columnList[y].data[x-1].value);
                 if(model.columnList[y].dataType.dataType=='TimeSeries'){                    
-                    arr[x][y] =new Date(Date.parse(model.columnList[y].data[x-1].value).toString("yyyy-MM-dd"));
+                    arr[x][y] = new Date(Date.parse(model.columnList[y].data[x-1].value).toString("yyyy-MM-dd"));
             
                 }
                 else{
                     arr[x][y] =model.columnList[y].data[x-1].value ;
-                }
-              
-              
+                }               
             }
         }
 
@@ -53,6 +52,7 @@
                 finalArray[x][mapping[y]-1]=arr[x][y];
             }
         }
+        console.log(finalArray);
 
         var data = new google.visualization.arrayToDataTable(finalArray);
         var image;
