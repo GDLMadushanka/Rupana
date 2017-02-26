@@ -1,0 +1,9 @@
+Location, Parent, Market trade volume (size)
+Global,NULL,5
+America,Global,10
+Europe,Global,15
+Asia,Global,5
+Asia,Global2,10
+Asia,Global3,5
+Australia,Global,37
+Africa,Global,13
