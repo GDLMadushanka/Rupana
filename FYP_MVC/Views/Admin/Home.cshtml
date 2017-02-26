@@ -5,4 +5,54 @@
 }
 
 <h2>Admin Home</h2>
+<div class="row">
+    <a href="@Url.Action("UserList", "Admin")">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-red set-icon">
+                    <svg class="glyph stroked group"><use xlink:href="#stroked-dashboard-dial"></use></svg>
+                </span>
+                <div class="text-box">
+                    <p class="main-text">@ViewData["userCount"] Users</p>
+                    <p class="text-muted">Users</p>
 
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="@Url.Action("ChartList", "Admin")">
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <span class="icon-box bg-color-green set-icon">
+                <i class="fa fa-bars"></i>
+            </span>
+            <div class="text-box">
+                <p class="main-text">@ViewData["chartCount"] Chart Types</p>
+                <p class="text-muted">Remaining</p>
+            </div>
+        </div>
+    </div>
+        </a>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <span class="icon-box bg-color-blue set-icon">
+                <i class="fa fa-bell-o"></i>
+            </span>
+            <div class="text-box">
+                <p class="main-text">5 Content</p>
+                <p class="text-muted">Content</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <span class="icon-box bg-color-brown set-icon">
+                <i class="fa fa-rocket"></i>
+            </span>
+            <div class="text-box">
+                <p class="main-text">@ViewData["feedbackCount"]  Feedback</p>
+                <p class="text-muted">Feedback</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -543,7 +543,6 @@
     <Content Include="Views\Visualisation\ParallelCordinates.cshtml" />
     <Content Include="Views\Visualisation\ChartDetails.cshtml" />
     <Content Include="Views\Blog\ChartDiscriptionPage.cshtml" />
-
     <Content Include="Views\Admin\RulesList.cshtml" />
     <Content Include="Views\Admin\DetailsRulesList.cshtml" />
     <Content Include="Views\Admin\EditRulesList.cshtml" />
@@ -553,11 +552,10 @@
     <Content Include="Views\Page\AboutUs.cshtml" />
     <Content Include="Views\Page\Charts.cshtml" />
     <Content Include="Views\Page\Guide.cshtml" />
-
     <Content Include="Views\Blog\publications.cshtml" />
     <Content Include="Views\Blog\Guide.cshtml" />
     <Content Include="Views\Blog\DevTeam.cshtml" />
-
+    <Content Include="Views\Admin\Feedback.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

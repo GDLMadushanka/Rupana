@@ -28,6 +28,10 @@ namespace FYP_MVC.Controllers
         public ActionResult Home()
         {
             ViewData["activeMenu"] = "Home";
+            ViewData["chartCount"] = db.charts.Count();
+            ViewData["userCount"] = db.users.Count();
+            ViewData["feedbackCount"] = db.feedBacks.Count();
+
             return View();
         }
 
@@ -699,6 +703,11 @@ namespace FYP_MVC.Controllers
             return View(db.userFeedBacks.Find(id));
         }
 
+        public ActionResult Feedback(int id)
+        {
+            ViewData["activeMenu"] = "Feedback";
+            return View(db.feedBacks.Where(s=>s.ID==2).ToList());
+        }
         public String CheckCountry()
         {
             Column col = new Column();
