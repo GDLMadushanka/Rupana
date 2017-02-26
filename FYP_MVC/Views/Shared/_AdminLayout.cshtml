@@ -14,6 +14,8 @@
     <script src="~/Content/js/bootstrap-dropdown.js"></script>
     <link href="~/Content/css/datepicker3.css" rel="stylesheet" />
     <link href="~/Content/css/styles.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
     <!--Icons-->
@@ -37,7 +39,7 @@
                     </button>
 
 
-                    <img src="~/Content/img/name.png" width="150" height="40" style="margin-top: 5px" />
+                    <img src="~/Content/img/logo5.png" width="150" height="40" style="margin-top: 5px" />
 
                     <ul class="user-menu">
                         <li class="dropdown pull-right">
@@ -57,7 +59,7 @@
         <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
             <form role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+
                 </div>
             </form>
             <ul class="nav menu">
@@ -86,6 +88,11 @@ Add New Chart</a>
                     <a @if (ViewData["activeMenu"] == "MyProfile") { @: class="active-menu"
                                        }
                        href="@Url.Action("ProfileInfo", "Admin")"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>My Profile</a>
+                </li>
+                <li>
+                    <a @if (ViewData["activeMenu"] == "Feedback") { @: class="active-menu"
+                                                              }
+                       href="@Url.Action("Feedback", "Admin")"><svg class="glyph stroked road"><use xlink:href="#stroked-male-user"></use></svg>Feedback</a>
                 </li>
  </ul>
         </div><!--/.sidebar-->

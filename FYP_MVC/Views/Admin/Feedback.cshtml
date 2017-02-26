@@ -1,0 +1,190 @@
+﻿@model IEnumerable<FYP_MVC.Models.DAO.feedBack>
+
+@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Feedback</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.numOfDim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.intention)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim1_IsContinuous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim1_Cardinality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim1_context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim2_IsContinuous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim2_Cardinality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim2_context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim3_IsContinuous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim3_Cardinality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim3_context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim4_IsContinuous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim4_Cardinality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim4_context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim5_IsContinuous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim5_Cardinality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim5_context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim6_IsContinuous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim6_Cardinality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim6_context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim7_IsContinuous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim7_Cardinality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dim7_context)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recommendation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chart.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.table.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.numOfDim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.intention)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim1_IsContinuous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim1_Cardinality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim1_context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim2_IsContinuous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim2_Cardinality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim2_context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim3_IsContinuous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim3_Cardinality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim3_context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim4_IsContinuous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim4_Cardinality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim4_context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim5_IsContinuous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim5_Cardinality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim5_context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim6_IsContinuous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim6_Cardinality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim6_context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim7_IsContinuous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim7_Cardinality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dim7_context)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recommendation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chart.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.table.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
